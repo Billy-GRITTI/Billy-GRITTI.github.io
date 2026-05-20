@@ -1,0 +1,346 @@
+/* 1. VARIABLES - Pour modifier tes couleurs partout d'un seul coup */
+:root {
+    --primary-color: #3498db;
+    --dark-color: #2c3e50;
+    --light-color: #f4f4f4;
+    --text-color: #333;
+    --white: #ffffff;
+}
+
+/* 2. RESET & BOX-SIZING - Pour éviter les mauvaises surprises de marges */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    max-width: 100%;
+}
+
+/* 3. TYPOGRAPHIE DE BASE */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background-color: #f9ffa4;
+    margin: 0;
+}
+
+/* 4. ÉLÉMENTS COMMUNS */
+h1{
+    margin-bottom: 20px;
+    color: #7c6f21;
+    font-family: 'Times New Roman', Times, serif ;
+    text-align: center;
+}
+
+ul{
+    display: flex;
+    justify-content: center; /* Centre le menu */
+    list-style: none;
+    gap: 70px; /* Espace entre les éléments */
+    margin: 0;
+    padding: 10;
+}
+
+li a{
+    color: #7c6f21;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 140px;  /* Ajuste la largeur selon tes besoins */
+    width: 100%;
+    height: 40px; /* Doit être identique à la largeur pour un cercle parfait */
+    border-radius: 10px; /* C'est ça qui crée le cercle */
+    transition: all 0.4s ease;
+    white-space: nowrap;
+    font-weight: bold;
+}
+
+li a:hover{
+    border: 2px solid #7c6f21; /* Couleur du cercle */
+    color: #7c6f21;              /* Le texte passe en blanc pour rester lisible */
+    transform: scale(1.1);
+}
+
+.rectangle-fond {
+    position: relative;
+    top: -50px;
+    left: 10px;
+    max-width: 1250px;
+    width: 100%;
+    height: 60px;
+    background-color: #f0f0f000; /* Couleur de fond */
+    border: 2px solid #7c6f21;    /* Bordure du rectangle */
+    border-radius: 8px;        /* Arrondis (optionnel) */
+    z-index: -1;
+    margin-bottom: 0px;
+}
+
+.container {
+    max-width: 900px; /* Largeur réduite comme demandé précédemment */
+    width: 100%;
+    margin: 0 auto;
+    padding: 60px 20px;
+}
+
+/* Barre bleue en haut */
+.top-label {
+    color: #7c6f21;
+    font-weight: bold;
+    font-size: 14px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.top-label::before {
+    content: "";
+    display: inline-block;
+    max-width: 40px;
+    width: 100%;
+    height: 2px;
+    background-color: #7c6f21;
+}
+
+.top-label::after {
+    content: "";
+    display: inline-block;
+    max-width: 40px;
+    width: 100%;
+    height: 2px;
+    background-color: #7c6f21;
+}
+
+/* Titre Bonjour + Nom */
+.main-title {
+    font-size: 64px;
+    font-family: 'Georgia', serif; /* Utilisation d'une police serif pour le "Bonjour" */
+    color: #7c6f21;
+    margin: 20px 0;
+    line-height: 1.1;
+}
+
+.name {
+    color: var(--blue-primary);
+    font-family: 'Arial Black', sans-serif; /* Police plus grasse pour le nom */
+    font-weight: 900;
+}
+
+/* Sous-titre et Description */
+.subtitle {
+    color: #7c6f21;
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.description {
+    color: #7c6f21;
+    font-size: 20px;
+    line-height: 1.6;
+    max-width: 800px;
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+/* Boutons */
+.button-group {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.button-group a{
+    color: #7c6f21;
+}
+
+.btn {
+    text-decoration: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: 0.3s;
+    border: 1px solid #7c6f21;
+}
+
+.btn-blue {
+    background-color: var(--blue-primary);
+    color: white;
+    border-color: var(--blue-primary);
+}
+
+.btn-white {
+    background-color: white;
+    color: var(--text-dark);
+}
+
+/* Effets au survol */
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.cv-image{
+    width: 500px;
+    height: 700px;
+    position: relative;
+    left: 400px;
+    top: -10px;
+    border: solid 3px #7c6f21;
+    border-radius: 5px;
+}
+
+/* HEADER GLOBAL */
+.header {
+    padding: 30px 20px;
+    text-align: center;
+}
+
+/* MENU DÉROULANT */
+.ap-dropdown {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: left;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    overflow: hidden;
+}
+
+/* TITRE CLIQUABLE */
+.ap-dropdown summary {
+    cursor: pointer;
+    padding: 20px;
+    font-size: 22px;
+    font-weight: bold;
+    color: #7c6f21;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+/* enlever flèche par défaut */
+.ap-dropdown summary::-webkit-details-marker {
+    display: none;
+}
+
+/* sous-titre */
+.ap-dropdown summary span {
+    font-size: 14px;
+    font-weight: normal;
+    opacity: 0.7;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* CONTENU DÉROULÉ */
+.ap-content {
+    padding: 20px;
+    border-top: 1px solid #eee;
+}
+
+/* TITRES DANS CONTENU */
+.ap-content h2 {
+    color: #7c6f21;
+    margin-top: 15px;
+    font-size: 18px;
+}
+
+/* LISTES */
+.ap-content ul {
+    margin-left: 20px;
+    margin-top: 8px;
+}
+
+.ap-content p {
+    margin-top: 8px;
+}
+
+/* CODE */
+.ap-content code {
+    background: #f4f4f4;
+    padding: 4px 8px;
+    border-radius: 6px;
+}
+
+/* summary cliquable */
+.ap-dropdown summary {
+    cursor: pointer;
+    position: relative;
+    padding-right: 30px;
+}
+
+/* flèche */
+.ap-dropdown summary::after {
+    content: "▼";
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%) rotate(0deg);
+    transition: transform 0.3s ease;
+    font-size: 14px;
+}
+
+/* quand le menu est ouvert */
+.ap-dropdown[open] summary::after {
+    transform: translateY(-50%) rotate(180deg);
+}
+
+/* petit texte d’aide */
+.hint {
+    font-size: 12px;
+    opacity: 0.6;
+    margin-left: 10px;
+}
+
+/* ARTICLE */
+.article {
+    max-width: 850px;
+    margin: 40px auto;
+    background: white;
+    border-radius: 14px;
+    padding: 30px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    margin-top: 10px;   /* ↓ avant sûrement 40px ou plus */
+    padding-top: 20px
+}
+
+/* HEADER */
+.article-header {
+    text-align: center;
+    border-bottom: 2px solid #7c6f21;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+
+.article-header h1 {
+    font-size: 32px;
+    color: #7c6f21;
+}
+
+.article-header h2 {
+    font-size: 18px;
+    margin-top: 10px;
+    color: #555;
+}
+
+.meta {
+    font-size: 12px;
+    opacity: 0.6;
+    margin-top: 5px;
+}
+
+/* CONTENU */
+.content h3 {
+    color: #7c6f21;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.content p {
+    margin-bottom: 10px;
+}
