@@ -351,3 +351,6 @@ li::before {
     color: #b8860b;
     margin-right: 8px;
 }
+
+.accueil li::before {
+}
