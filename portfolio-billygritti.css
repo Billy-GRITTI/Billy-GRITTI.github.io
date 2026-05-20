@@ -345,3 +345,9 @@ li a:hover{
 .content p {
     margin-bottom: 10px;
 }
+
+li::before {
+    content: "➤ ";
+    color: #b8860b;
+    margin-right: 8px;
+}
