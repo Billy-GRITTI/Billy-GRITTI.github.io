@@ -362,3 +362,10 @@ li::before {
     width: 100%;
     flex-shrink: 0;
 }
+
+.dockersap-image{
+    display: flex;
+    justify-content: center; /* Centre horizontalement */
+    align-items: center;     /* Centre verticalement */
+}
+    
